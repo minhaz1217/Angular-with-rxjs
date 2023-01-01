@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Course, sortCoursesBySeqNo } from '../model/course';
-import { Observable, throwError } from 'rxjs';
-import { catchError, finalize, map } from 'rxjs/operators';
-import { CoursesService } from '../services/courses.service';
-import { LoadingService } from '../loading/loading.service';
-import { MessagesService } from '../messages/messages.service';
+import { Observable } from 'rxjs';
+import { Course } from '../model/course';
 import { CoursesStore } from '../services/courses.store';
 
 
@@ -19,7 +15,6 @@ export class HomeComponent implements OnInit {
   advancedCourses$: Observable<Course[]>;
 
   constructor(
-    private loadingService: LoadingService,
     private coursesStore: CoursesStore
   ) {
 
@@ -30,9 +25,6 @@ export class HomeComponent implements OnInit {
   }
 
   reloadCourses() {
-
-    this.loadingService.loadingOn();
-
     this.beginnerCourses$ = this.coursesStore.filterByCategory("BEGINNER");
     this.advancedCourses$ = this.coursesStore.filterByCategory("ADVANCED");
   }
