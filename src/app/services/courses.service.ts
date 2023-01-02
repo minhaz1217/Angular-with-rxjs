@@ -20,6 +20,19 @@ export class CoursesService {
             );
     }
 
+    loadAllCourseLessons(courseId: number): Observable<Lesson[]> {
+        return this.http.get<Lesson[]>("/api/lessons", {
+            params: {
+                courseId: courseId.toString(),
+                pageSize: "100000"
+            }
+        })
+            .pipe(
+                map(res => res["payload"]),
+                shareReplay()
+            );
+    }
+
     loadAllCourses(): Observable<Course[]> {
         return this.http.get<Course[]>('/api/courses')
             .pipe(
