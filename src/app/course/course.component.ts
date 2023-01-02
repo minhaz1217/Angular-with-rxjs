@@ -26,7 +26,7 @@ import { CoursesService } from '../services/courses.service';
 export class CourseComponent implements OnInit {
 
   course$: Observable<Course>;
-  lessons$: Observable<Course[]>;
+  lessons$: Observable<Lesson[]>;
 
   lessons: Lesson[];
 
