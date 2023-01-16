@@ -5,6 +5,10 @@ In this repo I will maintain the code that I'll be doing along with the [course]
 
 I will try to create a branch for every checkpoint.
 
+What I do is that, I create a branch at the start of a tutorial and commit the changes done in that episode into that branch and after that I merge that branch to master when the episode is done.
+
+So say if you want start code of Episode 10, then you will have to start with the branch of Episode 09, because 09 has the code from end of episode 9 and beginning of episode 10.
+
 # Installation pre-requisites
 
 Please use Node 18 long-term support (LTS) version.
